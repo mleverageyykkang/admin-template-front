@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CAvatar,
   CBadge,
@@ -21,10 +21,11 @@ import {
   cilUser,
 } from '@coreui/icons'
 import CIcon from '@coreui/icons-react'
-
-import avatar8 from './../../assets/images/avatars/8.jpg'
+import { CiLogin, CiLogout } from 'react-icons/ci'
 
 const AppHeaderDropdown = () => {
+  const [isLogin, setIsLogin] = useState(true)
+  //Login 상태변경 함수 setIsLogin 만들기
   return (
     <CDropdown variant="nav-item" className="d-flex align-items-center">
       <CDropdownToggle placement="bottom-end" className="py-0 pe-0" caret={false}>
@@ -41,10 +42,17 @@ const AppHeaderDropdown = () => {
           Settings
         </CDropdownItem>
         <CDropdownDivider />
-        <CDropdownItem href="#">
-          <CIcon icon={cilLockLocked} className="me-2" />
-          Login
-        </CDropdownItem>
+        {isLogin ? (
+          <CDropdownItem href="#">
+            <CiLogout className="me-2" />
+            Logout
+          </CDropdownItem>
+        ) : (
+          <CDropdownItem>
+            <CiLogin className="me-2" />
+            Login
+          </CDropdownItem>
+        )}
       </CDropdownMenu>
     </CDropdown>
   )
