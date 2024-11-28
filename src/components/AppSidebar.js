@@ -12,8 +12,6 @@ import {
 import CIcon from '@coreui/icons-react'
 
 import { AppSidebarNav } from './AppSidebarNav'
-
-import { logo } from 'src/assets/brand/logo'
 import { sygnet } from 'src/assets/brand/sygnet'
 
 // sidebar nav config
@@ -37,9 +35,9 @@ const AppSidebar = () => {
     >
       <CSidebarHeader className="border-bottom">
         <CSidebarBrand to="/">
-          {/* fold 안 했을 때 */}
+          {/* fold 안 했을 때 (마케팅레버리지 png + 문구)*/}
           <div>마케팅레버리지</div>
-          {/* fold 했을 때 */}
+          {/* fold 했을 때 (ml 로고 png) */}
           <CIcon customClassName="sidebar-brand-narrow" icon={sygnet} height={32} />
         </CSidebarBrand>
         <CCloseButton
