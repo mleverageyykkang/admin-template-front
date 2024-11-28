@@ -24,7 +24,7 @@ import CIcon from '@coreui/icons-react'
 import { CiLogin, CiLogout } from 'react-icons/ci'
 
 const AppHeaderDropdown = () => {
-  const [isLogin, setIsLogin] = useState(true)
+  const [isLogin, setIsLogin] = useState(false)
   //Login 상태변경 함수 setIsLogin 만들기
   return (
     <CDropdown variant="nav-item" className="d-flex align-items-center">
@@ -43,12 +43,12 @@ const AppHeaderDropdown = () => {
         </CDropdownItem>
         <CDropdownDivider />
         {isLogin ? (
-          <CDropdownItem href="#">
+          <CDropdownItem href="/">
             <CiLogout className="me-2" />
             Logout
           </CDropdownItem>
         ) : (
-          <CDropdownItem>
+          <CDropdownItem href="/#/login">
             <CiLogin className="me-2" />
             Login
           </CDropdownItem>
